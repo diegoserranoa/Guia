@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface CiudadesTableViewController : UITableViewController
+@interface CiudadesTableViewController : PFQueryTableViewController
 
 @end

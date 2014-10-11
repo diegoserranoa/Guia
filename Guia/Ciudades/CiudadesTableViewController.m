@@ -7,9 +7,10 @@
 //
 
 #import "CiudadesTableViewController.h"
+#import "CiudadTableViewCell.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface CiudadesTableViewController ()
-
 @end
 
 @implementation CiudadesTableViewController
@@ -17,41 +18,56 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.clearsSelectionOnViewWillAppear = YES;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Parse query
+
+-(PFQuery *)queryForTable
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Ciudad"];
+    
+    [query whereKeyExists:@"nombre"];
+    
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    
+    return query;
+}
+
+-(void)objectsWillLoad
+{
+    [super objectsWillLoad];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+-(void)objectsDidLoad:(NSError *)error
+{
+    [super objectsDidLoad:error];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if (error) {
+        //mostrar error
+    }
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.objects.count;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+{
+    CiudadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ciudadCell" forIndexPath:indexPath];
+    cell.ciudadLabel.text = [object valueForKey:@"nombre"];
     
     return cell;
+    
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

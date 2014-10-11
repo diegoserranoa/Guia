@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CiudadTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *ciudadImageView;
+@property (weak, nonatomic) IBOutlet UILabel *ciudadLabel;
 
 @end
