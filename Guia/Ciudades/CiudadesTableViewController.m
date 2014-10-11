@@ -9,6 +9,7 @@
 #import "CiudadesTableViewController.h"
 #import "CiudadTableViewCell.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CiudadesTableViewController ()
 @end
@@ -64,7 +65,6 @@
 {
     CiudadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ciudadCell" forIndexPath:indexPath];
     cell.ciudadLabel.text = [object valueForKey:@"nombre"];
-    
     return cell;
     
 }
