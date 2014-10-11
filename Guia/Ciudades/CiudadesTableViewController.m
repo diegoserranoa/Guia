@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Ciudades";
+    self.title = NSLocalizedString(@"Ciudades", nil);
     self.clearsSelectionOnViewWillAppear = YES;
 }
 

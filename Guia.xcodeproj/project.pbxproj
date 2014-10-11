@@ -15,6 +15,7 @@
 		7E03AE8E19E8A5EF003DD1D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E03AE8C19E8A5EF003DD1D7 /* LaunchScreen.xib */; };
 		7E03AE9A19E8A5EF003DD1D7 /* GuiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E03AE9919E8A5EF003DD1D7 /* GuiaTests.m */; };
 		7E538D7619E8FB5B005809C2 /* DetalleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E538D7519E8FB5B005809C2 /* DetalleViewController.m */; };
+		7E538D8119E90B5B005809C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E538D8319E90B5B005809C2 /* Localizable.strings */; };
 		7EF6E6FC19E8B1D100865C83 /* CiudadesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E6FB19E8B1D100865C83 /* CiudadesTableViewController.m */; };
 		7EF6E6FF19E8B30B00865C83 /* CiudadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E6FE19E8B30B00865C83 /* CiudadTableViewCell.m */; };
 		7EF6E70319E8C31F00865C83 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E70219E8C31F00865C83 /* CustomView.m */; };
@@ -47,6 +48,12 @@
 		7E03AE9919E8A5EF003DD1D7 /* GuiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuiaTests.m; sourceTree = "<group>"; };
 		7E538D7419E8FB5B005809C2 /* DetalleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetalleViewController.h; path = Detalle/DetalleViewController.h; sourceTree = "<group>"; };
 		7E538D7519E8FB5B005809C2 /* DetalleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetalleViewController.m; path = Detalle/DetalleViewController.m; sourceTree = "<group>"; };
+		7E538D7D19E90AC7005809C2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		7E538D7E19E90AC7005809C2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7E538D8419E90B68005809C2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7E538D8619E90C58005809C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		7E538D8719E90C58005809C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7E538D8819E90C80005809C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7EF6E6FA19E8B1D100865C83 /* CiudadesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CiudadesTableViewController.h; path = Ciudades/CiudadesTableViewController.h; sourceTree = "<group>"; };
 		7EF6E6FB19E8B1D100865C83 /* CiudadesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CiudadesTableViewController.m; path = Ciudades/CiudadesTableViewController.m; sourceTree = "<group>"; };
 		7EF6E6FD19E8B30B00865C83 /* CiudadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CiudadTableViewCell.h; path = Ciudades/CiudadTableViewCell.h; sourceTree = "<group>"; };
@@ -139,6 +146,7 @@
 			children = (
 				7E03AE7E19E8A5EF003DD1D7 /* Info.plist */,
 				7E03AE7F19E8A5EF003DD1D7 /* main.m */,
+				7E538D8319E90B5B005809C2 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,8 +271,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				es,
+				en,
 			);
 			mainGroup = 7E03AE7119E8A5EF003DD1D7;
 			productRefGroup = 7E03AE7B19E8A5EF003DD1D7 /* Products */;
@@ -283,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E03AE8919E8A5EF003DD1D7 /* Main.storyboard in Resources */,
+				7E538D8119E90B5B005809C2 /* Localizable.strings in Resources */,
 				7E03AE8E19E8A5EF003DD1D7 /* LaunchScreen.xib in Resources */,
 				7E03AE8B19E8A5EF003DD1D7 /* Images.xcassets in Resources */,
 			);
@@ -369,6 +379,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				7E03AE8819E8A5EF003DD1D7 /* Base */,
+				7E538D7D19E90AC7005809C2 /* es */,
+				7E538D8619E90C58005809C2 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -377,8 +389,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				7E03AE8D19E8A5EF003DD1D7 /* Base */,
+				7E538D7E19E90AC7005809C2 /* es */,
+				7E538D8719E90C58005809C2 /* en */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		7E538D8319E90B5B005809C2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E538D8419E90B68005809C2 /* es */,
+				7E538D8819E90C80005809C2 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

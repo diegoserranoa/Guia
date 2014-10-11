@@ -171,40 +171,40 @@
     // Parse errors.
     if (error.code == kPFErrorInvalidEmailAddress) {
         // 125: The email address was invalid.
-        return @"Cuenta de correo inválida.";
+        return NSLocalizedString(@"Cuenta de correo invalida", nil);
     } else if (error.code == kPFErrorConnectionFailed) {
         // 100: The connection to the Parse servers failed.
-        return @"Error de conexión.";
+        return NSLocalizedString(@"Error de conexion", nil);
     } else if (error.code == kPFErrorInternalServer){
         // 1: Internal server error. No information available.
-        return @"Error en el servidor.";
+        return NSLocalizedString(@"Error en el servidor", nil);
     } else if (error.code == kPFErrorTimeout){
         // 124: The request timed out on the server. Typically this indicates the request is too expensive.
-        return @"Error de conexión.";
+        return NSLocalizedString(@"Error de timeout", nil);
     } else if (error.code == kPFErrorUserEmailMissing){
         // 204: The email is missing, and must be specified
-        return @"Introduzca un correo válido.";
+        return NSLocalizedString(@"Introduzca un correo valido", nil);
     } else if (error.code == kPFErrorUserEmailTaken) {
         // 203: Email has already been taken
-        return @"Ya existe una cuenta con este correo.";
+        return NSLocalizedString(@"Ya existe una cuenta con este correo", nil);
     } else if (error.code == kPFErrorUsernameMissing){
         // 200: Username is missing or empty
-        return @"Introduzca nombre de usuario.";
+        return NSLocalizedString(@"Introduzca nombre de usuario", nil);
     } else if (error.code == kPFErrorUsernameTaken){
         // 202: Username has already been taken
-        return @"Ya existe una cuenta con este nombre de usuario.";
+        return NSLocalizedString(@"Ya existe una cuenta con este nombre de usuario", nil);
     } else if (error.code == kPFErrorUserPasswordMissing){
         // 201: Password is missing or empty
-        return @"Introduzca una contraseña válida.";
+        return NSLocalizedString(@"Introduzca una contrasena valida", nil);
     } else if (error.code == kPFErrorUserWithEmailNotFound){
         // 205: A user with the specified email was not found
-        return @"Usuario no encontrado.";
+        return NSLocalizedString(@"Usuario no encontrado", nil);
     } else if (error.code == kPFErrorObjectNotFound){
         // 101: Object doesn't exist, or has an incorrect password.
-        return @"Usuario no existe o contraseña incorrecta.";
+        return NSLocalizedString(@"Usuario no existe o contrasena incorrecta", nil);
     }
     // default
-    return @"Error en la aplicación.";
+    return NSLocalizedString(@"Error en la aplicacion", nil);
 }
 
 @end

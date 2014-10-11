@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Guia
+
+  Created by Diego Serrano on 10/11/14.
+  Copyright (c) 2014 Diego Serrano. All rights reserved.
+*/
+
+"Ciudades" = "Cities";
+"Comida" = "Food";
+
+"Cuenta de correo invalida" = "The email address was invalid.";
+"Error de conexion" = "The connection to the servers failed.";
+"Error en el servidor" = "Internal server error. No information available.";
+"Error de timeout" = "The request timed out on the server.";
+"Introduzca un correo valido" = "The email is missing, and must be specified.";
+"Ya existe una cuenta con este correo" = "Email has already been taken.";
+"Introduzca nombre de usuario" = "Username is missing or empty.";
+"Ya existe una cuenta con este nombre de usuario" = "Username has already been taken.";
+"Introduzca una contrasena valida" = "Password is missing or empty.";
+"Usuario no encontrado" = "A user with the specified email was not found.";
+"Usuario no existe o contrasena incorrecta" = "Object doesn't exist, or has an incorrect password.";
+"Error en la aplicacion" = "There was an error in the application.";

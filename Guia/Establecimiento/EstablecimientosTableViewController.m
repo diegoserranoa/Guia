@@ -50,6 +50,8 @@
             if (!error) {
                 self.objects = [NSArray arrayWithArray:objects];
                 [self.tableView reloadData];
+            } else {
+#warning handle error
             }
         }];
     } else {
@@ -65,8 +67,12 @@
                     if (!error) {
                         self.objects = [NSArray arrayWithArray:objects];
                         [self.tableView reloadData];
+                    } else {
+                        #warning handle error
                     }
                 }];
+            } else {
+                #warning handle error
             }
         }];
     }
