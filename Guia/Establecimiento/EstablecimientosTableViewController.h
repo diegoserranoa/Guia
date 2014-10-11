@@ -8,7 +8,7 @@
 
 #import <Parse/Parse.h>
 
-@interface EstablecimientosTableViewController : PFQueryTableViewController
+@interface EstablecimientosTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) PFObject *ciudad;
 

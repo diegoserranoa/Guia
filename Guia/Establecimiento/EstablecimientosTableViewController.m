@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @property (strong, nonatomic) NSString *tipoSeleccionado;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *objects;
 
 @end
 
@@ -28,30 +30,26 @@
               @"Entretenimiento",
               ];
     self.tipoSeleccionado = @"Top10";
+    
+    PFQuery *queryEstablecimiento = [PFQuery queryWithClassName:@"Establecimiento"];
+    [queryEstablecimiento whereKey:@"tipo" equalTo:@"Comida"];
+    [queryEstablecimiento findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            PFQuery *querySucursal = [PFQuery queryWithClassName:@"Sucursal"];
+            [querySucursal whereKey:@"ciudad" equalTo:self.ciudad];
+            [querySucursal includeKey:@"establecimiento"];
+            [querySucursal findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    self.objects = [NSArray arrayWithArray:objects];
+                    [self.tableView reloadData];
+                }
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
--(PFQuery *)queryForTable
-{
-    PFQuery *query = [PFQuery queryWithClassName:@"Sucursal"];
-    
-    [query whereKey:@"ciudad" equalTo:self.ciudad];
-    [query includeKey:@"establecimiento"];
-    
-    query.cachePolicy = kPFCachePolicyCacheElseNetwork;
-
-    return query;
-}
-
--(void)objectsDidLoad:(NSError *)error
-{
-    [super objectsDidLoad:error];
-    if (error) {
-        // mostrar error
-    }
 }
 
 #pragma mark - Table view data source
@@ -66,11 +64,11 @@
     return self.objects.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     EstablecimientoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"establecimientoCell"];
-    
+    PFObject *object = [self.objects objectAtIndex:indexPath.row];
     cell.titulo.text = object[@"establecimiento"][@"nombre"];
     
     return cell;
