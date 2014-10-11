@@ -30,26 +30,45 @@
               @"Entretenimiento",
               ];
     self.tipoSeleccionado = @"Top10";
-    
-    PFQuery *queryEstablecimiento = [PFQuery queryWithClassName:@"Establecimiento"];
-    [queryEstablecimiento whereKey:@"tipo" equalTo:@"Comida"];
-    [queryEstablecimiento findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            PFQuery *querySucursal = [PFQuery queryWithClassName:@"Sucursal"];
-            [querySucursal whereKey:@"ciudad" equalTo:self.ciudad];
-            [querySucursal includeKey:@"establecimiento"];
-            [querySucursal findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                if (!error) {
-                    self.objects = [NSArray arrayWithArray:objects];
-                    [self.tableView reloadData];
-                }
-            }];
-        }
-    }];
+    [self loadObjects];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+-(void)loadObjects
+{
+    if ([self.tipoSeleccionado isEqualToString:@"Top10"]) {
+        PFQuery *querySucursal = [PFQuery queryWithClassName:@"Sucursal"];
+        [querySucursal whereKey:@"ciudad" equalTo:self.ciudad];
+        [querySucursal includeKey:@"establecimiento"];
+        [querySucursal setLimit:10];
+        [querySucursal orderByAscending:@"rating"];
+        [querySucursal findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                self.objects = [NSArray arrayWithArray:objects];
+                [self.tableView reloadData];
+            }
+        }];
+    } else {
+        PFQuery *queryEstablecimiento = [PFQuery queryWithClassName:@"Establecimiento"];
+        [queryEstablecimiento whereKey:@"tipo" equalTo:@"Comida"];
+        [queryEstablecimiento findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                PFQuery *querySucursal = [PFQuery queryWithClassName:@"Sucursal"];
+                [querySucursal whereKey:@"ciudad" equalTo:self.ciudad];
+                [querySucursal whereKey:@"establecimiento" containedIn:objects];
+                [querySucursal includeKey:@"establecimiento"];
+                [querySucursal findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    if (!error) {
+                        self.objects = [NSArray arrayWithArray:objects];
+                        [self.tableView reloadData];
+                    }
+                }];
+            }
+        }];
+    }
 }
 
 #pragma mark - Table view data source
