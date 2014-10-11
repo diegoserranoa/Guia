@@ -22,6 +22,8 @@
                   clientKey:@"hJGhACVZwtr3Ia6jlWxe6ZxNskMnsmVJds0pIUtN"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:255.0f/255.0f green:209.0f/255.0f blue:14.0f/255.0f alpha:1.0f]];
+    
     return YES;
 }
 
