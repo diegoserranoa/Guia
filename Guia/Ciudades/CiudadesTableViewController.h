@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CiudadesTableViewController.h
 //  Guia
 //
 //  Created by Diego Serrano on 10/10/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CiudadesTableViewController : UITableViewController
 
 @end
-
