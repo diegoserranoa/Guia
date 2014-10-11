@@ -16,6 +16,9 @@
 		7E03AE9A19E8A5EF003DD1D7 /* GuiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E03AE9919E8A5EF003DD1D7 /* GuiaTests.m */; };
 		7EF6E6FC19E8B1D100865C83 /* CiudadesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E6FB19E8B1D100865C83 /* CiudadesTableViewController.m */; };
 		7EF6E6FF19E8B30B00865C83 /* CiudadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E6FE19E8B30B00865C83 /* CiudadTableViewCell.m */; };
+		7EF6E70319E8C31F00865C83 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E70219E8C31F00865C83 /* CustomView.m */; };
+		7EF6E70719E8C80600865C83 /* EstablecimientosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E70619E8C80600865C83 /* EstablecimientosTableViewController.m */; };
+		7EF6E70A19E8C94C00865C83 /* EstablecimientoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6E70919E8C94C00865C83 /* EstablecimientoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,12 @@
 		7EF6E6FB19E8B1D100865C83 /* CiudadesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CiudadesTableViewController.m; path = Ciudades/CiudadesTableViewController.m; sourceTree = "<group>"; };
 		7EF6E6FD19E8B30B00865C83 /* CiudadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CiudadTableViewCell.h; path = Ciudades/CiudadTableViewCell.h; sourceTree = "<group>"; };
 		7EF6E6FE19E8B30B00865C83 /* CiudadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CiudadTableViewCell.m; path = Ciudades/CiudadTableViewCell.m; sourceTree = "<group>"; };
+		7EF6E70119E8C31F00865C83 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomView.h; path = AlertView/CustomView.h; sourceTree = "<group>"; };
+		7EF6E70219E8C31F00865C83 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomView.m; path = AlertView/CustomView.m; sourceTree = "<group>"; };
+		7EF6E70519E8C80600865C83 /* EstablecimientosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstablecimientosTableViewController.h; path = Establecimiento/EstablecimientosTableViewController.h; sourceTree = "<group>"; };
+		7EF6E70619E8C80600865C83 /* EstablecimientosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstablecimientosTableViewController.m; path = Establecimiento/EstablecimientosTableViewController.m; sourceTree = "<group>"; };
+		7EF6E70819E8C94C00865C83 /* EstablecimientoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstablecimientoTableViewCell.h; path = Establecimiento/EstablecimientoTableViewCell.h; sourceTree = "<group>"; };
+		7EF6E70919E8C94C00865C83 /* EstablecimientoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstablecimientoTableViewCell.m; path = Establecimiento/EstablecimientoTableViewCell.m; sourceTree = "<group>"; };
 		B99D85913D48814D21034A36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB77F6C79F9D94F381ECF782 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +117,8 @@
 		7E03AE7C19E8A5EF003DD1D7 /* Guia */ = {
 			isa = PBXGroup;
 			children = (
+				7EF6E70419E8C7C700865C83 /* Establecimiento */,
+				7EF6E70019E8C2D000865C83 /* AlertView */,
 				7EF6E6F919E8B19E00865C83 /* Ciudades */,
 				7E03AE8119E8A5EF003DD1D7 /* AppDelegate.h */,
 				7E03AE8219E8A5EF003DD1D7 /* AppDelegate.m */,
@@ -154,6 +165,26 @@
 				7EF6E6FE19E8B30B00865C83 /* CiudadTableViewCell.m */,
 			);
 			name = Ciudades;
+			sourceTree = "<group>";
+		};
+		7EF6E70019E8C2D000865C83 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				7EF6E70119E8C31F00865C83 /* CustomView.h */,
+				7EF6E70219E8C31F00865C83 /* CustomView.m */,
+			);
+			name = AlertView;
+			sourceTree = "<group>";
+		};
+		7EF6E70419E8C7C700865C83 /* Establecimiento */ = {
+			isa = PBXGroup;
+			children = (
+				7EF6E70519E8C80600865C83 /* EstablecimientosTableViewController.h */,
+				7EF6E70619E8C80600865C83 /* EstablecimientosTableViewController.m */,
+				7EF6E70819E8C94C00865C83 /* EstablecimientoTableViewCell.h */,
+				7EF6E70919E8C94C00865C83 /* EstablecimientoTableViewCell.m */,
+			);
+			name = Establecimiento;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF6E70719E8C80600865C83 /* EstablecimientosTableViewController.m in Sources */,
+				7EF6E70319E8C31F00865C83 /* CustomView.m in Sources */,
 				7E03AE8319E8A5EF003DD1D7 /* AppDelegate.m in Sources */,
 				7EF6E6FF19E8B30B00865C83 /* CiudadTableViewCell.m in Sources */,
+				7EF6E70A19E8C94C00865C83 /* EstablecimientoTableViewCell.m in Sources */,
 				7E03AE8019E8A5EF003DD1D7 /* main.m in Sources */,
 				7EF6E6FC19E8B1D100865C83 /* CiudadesTableViewController.m in Sources */,
 			);

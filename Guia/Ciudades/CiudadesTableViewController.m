@@ -10,6 +10,9 @@
 #import "CiudadTableViewCell.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "CustomView.h"
+#import <CXCardView/CXCardView.h>
+#import "EstablecimientosTableViewController.h"
 
 @interface CiudadesTableViewController ()
 @end
@@ -51,7 +54,7 @@
     [super objectsDidLoad:error];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (error) {
-        //mostrar error
+        [CXCardView showWithView:[CustomView defaultViewWithError:error] draggable:YES];
     }
 }
 
@@ -65,6 +68,8 @@
 {
     CiudadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ciudadCell" forIndexPath:indexPath];
     cell.ciudadLabel.text = [object valueForKey:@"nombre"];
+    PFFile *image = [object objectForKey:@"imagen"];
+    [cell.ciudadImageView sd_setImageWithURL:[NSURL URLWithString:image.url] placeholderImage:[UIImage imageNamed:[object valueForKey:@"nombre"]]];
     return cell;
     
 }
@@ -103,14 +108,14 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"establecimientoSegue"]) {
+        EstablecimientosTableViewController *etvc = (EstablecimientosTableViewController *)[[(UINavigationController *)[segue destinationViewController] viewControllers] objectAtIndex:0];
+        etvc.ciudad = [self.objects objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
 }
-*/
 
 @end
